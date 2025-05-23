@@ -1,5 +1,6 @@
 // axiosConfig.ts
 import axios from 'axios';
+import  Cookies  from 'js-cookie';
 
 const axiosInstance = axios.create({
   baseURL: process.env.API_BASE_URL || '/api', // substitua pela URL da sua API
@@ -13,7 +14,7 @@ const axiosInstance = axios.create({
 // Interceptor de requisição (opcional, para tokens por exemplo)
 axiosInstance.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem('token'); // ou outra forma de armazenar o token
+      const token = Cookies.get("token");
     if (token) {
       if (!config.headers) {
         config.headers = {};

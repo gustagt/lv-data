@@ -27,6 +27,8 @@ class UserRepository {
       throw new Error("Usuário nao encontrado.");
     }
 
+
+
     const token = jwt.sign(
       { id: user.id, username: user.username },
       process.env.JWT_SECRET || "secreta", 

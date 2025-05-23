@@ -1,3 +1,4 @@
+import { getAuthUsername, isValidate } from "@/lib/helper/auth";
 import stationRepository from "@/lib/repository/Station";
 
 export async function GET() {
@@ -7,20 +8,29 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
+
+  const authHeader = req.headers.get("authorization");
+  if (!authHeader || !isValidate(authHeader.split(" ")[1])) {
+    return Response.json({ error: "Unauthorized" }, { status: 403 });
+  }
+
+  const username = await getAuthUsername(authHeader.split(" ")[1]);
+
+
   const data = await req.json();
 
   try {
-    const newStation = await stationRepository.create(data);
+    const newStation = await stationRepository.create({...data, userCreated: username});
     return Response.json(newStation, { status: 201 });
   } catch (error) {
     if (error instanceof Error) {
-      console.error("Error creating station:", error.message);
-      return Response.json({ error: error.message }, { status: 500 });
+      console.error("Erro ao criar a cadastro:", error.message);
+      return Response.json({ error: error.message }, { status: 400 });
     }
 
-    console.error("Error creating station:", error);
+    console.error("Erro ao criar a cadastro:", error);
     return Response.json(
-      { error: "Failed to create station" },
+      { error: "Falha ao criar a cadastro" },
       { status: 500 }
     );
   }

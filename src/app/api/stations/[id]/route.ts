@@ -7,13 +7,13 @@ export async function DELETE(req: Request, { params }: { params: Promise<{ id: s
         return Response.json(deletedStation, { status: 200 });
     } catch (error) {
         if (error instanceof Error) {
-            console.error("Error deleting station:", error.message);
+            console.error("Erro ao deletar cadastro:", error.message);
             return Response.json({ error: error.message }, { status: 500 });
         }
 
-        console.error("Error deleting station:", error);
+        console.error("Erro ao deletar cadastro:", error);
         return Response.json(
-            { error: "Failed to delete station" },
+            { error: "Falha ao deletar cadastro" },
             { status: 500 }
         );
     }
@@ -29,13 +29,13 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
         return Response.json(updatedStation, { status: 200 });
     } catch (error) {
         if (error instanceof Error) {
-            console.error("Error updating station:", error.message);
-            return Response.json({ error: error.message }, { status: 500 });
+            console.error("Erro ao editar cadastro:", error.message);
+            return Response.json({ error: error.message }, { status: 400 });
         }
 
-        console.error("Error updating station:", error);
+        console.error("Erro ao editar cadastro:", error);
         return Response.json(
-            { error: "Failed to update station" },
+            { error: "Falha ao editar cadastro" },
             { status: 500 }
         );
     }
