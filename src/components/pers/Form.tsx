@@ -330,7 +330,7 @@ export function ProfileForm() {
                 <Select
                   disabled={loading}
                   onValueChange={field.onChange}
-                  defaultValue={field.value}
+                  value={field.value}
                 >
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder="Selecione o setor" />
