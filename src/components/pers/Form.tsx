@@ -25,16 +25,16 @@ const formSchema = z
     computer: z
       .string()
       .min(6, {
-        message: "Computer must be at least 6 characters.",
+        message: "Computador precisa de 6 caracteres.",
       })
       .max(6, {
-        message: "Computer must be at most 6 characters.",
+        message: "Computador precisa de 6 caracteres.",
       })
       .regex(/^\d+$/, {
         message: "Deve conter apenas números.",
       }),
     processor: z.string().min(2, {
-      message: "Processor must be at least 2 characters.",
+      message: "Processador precisa de 2 caracteres.",
     }),
     monitor1: z
       .string()
@@ -306,7 +306,7 @@ export function ProfileForm() {
           defaultValue={field.value}
         >
           <SelectTrigger className="w-full">
-            <SelectValue className="placeholder:text-xl  placeholder:font-bold" placeholder="Selecione o setor" />
+            <SelectValue  placeholder="Selecione o setor" />
           </SelectTrigger>
            <SelectContent>
             <SelectItem value="Assessoria">Assessoria</SelectItem>
