@@ -18,6 +18,7 @@ import stationService from "@/lib/services/station";
 import { IStation } from "@/lib/interfaces/Station";
 import { useState } from "react";
 import Spinner from "../icons/spinner";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 
 const formSchema = z
   .object({
@@ -59,6 +60,8 @@ const formSchema = z
       }),
     monitor2: z.string(),
     pol2: z.string(),
+    sector: z
+      .string().min(1, { message: "Selecione o setor" }),
     responsible: z
       .string()
       .min(3, {
@@ -142,6 +145,7 @@ export function ProfileForm() {
       monitor1: "",
       pol1: "",
       monitor2: "",
+      sector: "",
       pol2: "",
       responsible: "",
     },
@@ -291,6 +295,63 @@ export function ProfileForm() {
           )}
         />
         <FormField
+  control={form.control}
+  name="sector"
+  render={({ field }) => (
+    <FormItem className="h-20">
+      <FormControl>
+        <Select
+          disabled={loading}
+          onValueChange={field.onChange}
+          defaultValue={field.value}
+        >
+          <SelectTrigger className="w-full">
+            <SelectValue className="placeholder:text-xl  placeholder:font-bold" placeholder="Selecione o setor" />
+          </SelectTrigger>
+           <SelectContent>
+            <SelectItem value="Assessoria">Assessoria</SelectItem>
+            <SelectItem value="Assessoria Contábil">Assessoria Contábil</SelectItem>
+            <SelectItem value="Assessoria de Controle Interno">Assessoria de Controle Interno</SelectItem>
+            <SelectItem value="Assessoria de Gestão e Inovação">Assessoria de Gestão e Inovação</SelectItem>
+            <SelectItem value="Assessoria Jurídica">Assessoria Jurídica</SelectItem>
+            <SelectItem value="CICC">CICC</SelectItem>
+            <SelectItem value="Comunicação">Comunicação</SelectItem>
+            <SelectItem value="Diretoria Administrativa Financeira">Diretoria Administrativa Financeira</SelectItem>
+            <SelectItem value="Diretoria de Engenharia de Tráfego">Diretoria de Engenharia de Tráfego</SelectItem>
+            <SelectItem value="Diretoria de Operações e Educação para o Trânsito">Diretoria de Operações e Educação para o Trânsito</SelectItem>
+            <SelectItem value="Diretoria de Planejamento e Pesquisa de Tráfego">Diretoria de Planejamento e Pesquisa de Tráfego</SelectItem>
+            <SelectItem value="Diretoria de Transportes">Diretoria de Transportes</SelectItem>
+            <SelectItem value="Gerência Administrativa">Gerência Administrativa</SelectItem>
+            <SelectItem value="Gerência de Análise e Processamento de Infrações">Gerência de Análise e Processamento de Infrações</SelectItem>
+            <SelectItem value="Gerência de Atendimento Regional">Gerência de Atendimento Regional</SelectItem>
+            <SelectItem value="Gerência de Educação para a Mobilidade">Gerência de Educação para a Mobilidade</SelectItem>
+            <SelectItem value="Gerência de Elaboração de Projetos Viários">Gerência de Elaboração de Projetos Viários</SelectItem>
+            <SelectItem value="Gerência de Estudos e Planejamento de Transportes">Gerência de Estudos e Planejamento de Transportes</SelectItem>
+            <SelectItem value="Gerência de Gestão de Operações de Transporte">Gerência de Gestão de Operações de Transporte</SelectItem>
+            <SelectItem value="Gerência de Implantação de Sinalização">Gerência de Implantação de Sinalização</SelectItem>
+            <SelectItem value="Gerência de Licenciamento de Projetos">Gerência de Licenciamento de Projetos</SelectItem>
+            <SelectItem value="Gerência de Licitações e Contratos">Gerência de Licitações e Contratos</SelectItem>
+            <SelectItem value="Gerência de Monitoramento Eletrônico">Gerência de Monitoramento Eletrônico</SelectItem>
+            <SelectItem value="Gerência de Operações de Trânsito">Gerência de Operações de Trânsito</SelectItem>
+            <SelectItem value="Gerência de Planejamento da Mobilidade">Gerência de Planejamento da Mobilidade</SelectItem>
+            <SelectItem value="Gerência de Planejamento Orçamentário">Gerência de Planejamento Orçamentário</SelectItem>
+            <SelectItem value="Gerência de Recursos Humanos">Gerência de Recursos Humanos</SelectItem>
+            <SelectItem value="Gerência de Tecnologia da Informação">Gerência de Tecnologia da Informação</SelectItem>
+            <SelectItem value="Gerência de Transportes Especiais">Gerência de Transportes Especiais</SelectItem>
+            <SelectItem value="Gerência do SIM">Gerência do SIM</SelectItem>
+            <SelectItem value="Gerência Orçamentária e Financeira">Gerência Orçamentária e Financeira</SelectItem>
+            <SelectItem value="Outros">Outros</SelectItem>
+            <SelectItem value="Participação Popular">Participação Popular</SelectItem>
+            <SelectItem value="Presidência">Presidência</SelectItem>
+            <SelectItem value="Vice Presidência">Vice Presidência</SelectItem>
+          </SelectContent>
+        </Select>
+      </FormControl>
+      <FormMessage />
+    </FormItem>
+  )}
+/>
+        <FormField
           control={form.control}
           name="responsible"
           render={({ field }) => (
@@ -309,6 +370,8 @@ export function ProfileForm() {
             </FormItem>
           )}
         />
+
+        
 
         <Button
           className="w-full py-6 text-xl font-[600]"

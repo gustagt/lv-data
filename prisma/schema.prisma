@@ -22,6 +22,7 @@ model Station {
   pol1        String
   monitor2    String?  @unique
   pol2        String?
+  sector      String
   responsible String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt

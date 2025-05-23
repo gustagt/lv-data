@@ -128,6 +128,7 @@ exports.Prisma.StationScalarFieldEnum = {
   pol1: 'pol1',
   monitor2: 'monitor2',
   pol2: 'pol2',
+  sector: 'sector',
   responsible: 'responsible',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',

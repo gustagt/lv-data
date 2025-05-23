@@ -6,6 +6,7 @@ export interface IStation {
     pol1: string;
     monitor2: string;
     pol2: string;
+    sector: string;
     responsible: string;
     createdAt?: Date;
     updatedAt?: Date;

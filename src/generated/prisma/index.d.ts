@@ -988,6 +988,7 @@ export namespace Prisma {
     pol1: string | null
     monitor2: string | null
     pol2: string | null
+    sector: string | null
     responsible: string | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -1002,6 +1003,7 @@ export namespace Prisma {
     pol1: string | null
     monitor2: string | null
     pol2: string | null
+    sector: string | null
     responsible: string | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -1016,6 +1018,7 @@ export namespace Prisma {
     pol1: number
     monitor2: number
     pol2: number
+    sector: number
     responsible: number
     createdAt: number
     updatedAt: number
@@ -1040,6 +1043,7 @@ export namespace Prisma {
     pol1?: true
     monitor2?: true
     pol2?: true
+    sector?: true
     responsible?: true
     createdAt?: true
     updatedAt?: true
@@ -1054,6 +1058,7 @@ export namespace Prisma {
     pol1?: true
     monitor2?: true
     pol2?: true
+    sector?: true
     responsible?: true
     createdAt?: true
     updatedAt?: true
@@ -1068,6 +1073,7 @@ export namespace Prisma {
     pol1?: true
     monitor2?: true
     pol2?: true
+    sector?: true
     responsible?: true
     createdAt?: true
     updatedAt?: true
@@ -1169,6 +1175,7 @@ export namespace Prisma {
     pol1: string
     monitor2: string | null
     pol2: string | null
+    sector: string
     responsible: string
     createdAt: Date
     updatedAt: Date
@@ -1202,6 +1209,7 @@ export namespace Prisma {
     pol1?: boolean
     monitor2?: boolean
     pol2?: boolean
+    sector?: boolean
     responsible?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -1216,6 +1224,7 @@ export namespace Prisma {
     pol1?: boolean
     monitor2?: boolean
     pol2?: boolean
+    sector?: boolean
     responsible?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -1230,6 +1239,7 @@ export namespace Prisma {
     pol1?: boolean
     monitor2?: boolean
     pol2?: boolean
+    sector?: boolean
     responsible?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -1244,13 +1254,14 @@ export namespace Prisma {
     pol1?: boolean
     monitor2?: boolean
     pol2?: boolean
+    sector?: boolean
     responsible?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     userCreated?: boolean
   }
 
-  export type StationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "computer" | "processor" | "monitor1" | "pol1" | "monitor2" | "pol2" | "responsible" | "createdAt" | "updatedAt" | "userCreated", ExtArgs["result"]["station"]>
+  export type StationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "computer" | "processor" | "monitor1" | "pol1" | "monitor2" | "pol2" | "sector" | "responsible" | "createdAt" | "updatedAt" | "userCreated", ExtArgs["result"]["station"]>
 
   export type $StationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Station"
@@ -1263,6 +1274,7 @@ export namespace Prisma {
       pol1: string
       monitor2: string | null
       pol2: string | null
+      sector: string
       responsible: string
       createdAt: Date
       updatedAt: Date
@@ -1697,6 +1709,7 @@ export namespace Prisma {
     readonly pol1: FieldRef<"Station", 'String'>
     readonly monitor2: FieldRef<"Station", 'String'>
     readonly pol2: FieldRef<"Station", 'String'>
+    readonly sector: FieldRef<"Station", 'String'>
     readonly responsible: FieldRef<"Station", 'String'>
     readonly createdAt: FieldRef<"Station", 'DateTime'>
     readonly updatedAt: FieldRef<"Station", 'DateTime'>
@@ -3144,6 +3157,7 @@ export namespace Prisma {
     pol1: 'pol1',
     monitor2: 'monitor2',
     pol2: 'pol2',
+    sector: 'sector',
     responsible: 'responsible',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
@@ -3265,6 +3279,7 @@ export namespace Prisma {
     pol1?: StringFilter<"Station"> | string
     monitor2?: StringNullableFilter<"Station"> | string | null
     pol2?: StringNullableFilter<"Station"> | string | null
+    sector?: StringFilter<"Station"> | string
     responsible?: StringFilter<"Station"> | string
     createdAt?: DateTimeFilter<"Station"> | Date | string
     updatedAt?: DateTimeFilter<"Station"> | Date | string
@@ -3279,6 +3294,7 @@ export namespace Prisma {
     pol1?: SortOrder
     monitor2?: SortOrderInput | SortOrder
     pol2?: SortOrderInput | SortOrder
+    sector?: SortOrder
     responsible?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -3296,6 +3312,7 @@ export namespace Prisma {
     processor?: StringFilter<"Station"> | string
     pol1?: StringFilter<"Station"> | string
     pol2?: StringNullableFilter<"Station"> | string | null
+    sector?: StringFilter<"Station"> | string
     responsible?: StringFilter<"Station"> | string
     createdAt?: DateTimeFilter<"Station"> | Date | string
     updatedAt?: DateTimeFilter<"Station"> | Date | string
@@ -3310,6 +3327,7 @@ export namespace Prisma {
     pol1?: SortOrder
     monitor2?: SortOrderInput | SortOrder
     pol2?: SortOrderInput | SortOrder
+    sector?: SortOrder
     responsible?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -3332,6 +3350,7 @@ export namespace Prisma {
     pol1?: StringWithAggregatesFilter<"Station"> | string
     monitor2?: StringNullableWithAggregatesFilter<"Station"> | string | null
     pol2?: StringNullableWithAggregatesFilter<"Station"> | string | null
+    sector?: StringWithAggregatesFilter<"Station"> | string
     responsible?: StringWithAggregatesFilter<"Station"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Station"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Station"> | Date | string
@@ -3409,6 +3428,7 @@ export namespace Prisma {
     pol1: string
     monitor2?: string | null
     pol2?: string | null
+    sector: string
     responsible: string
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -3423,6 +3443,7 @@ export namespace Prisma {
     pol1: string
     monitor2?: string | null
     pol2?: string | null
+    sector: string
     responsible: string
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -3436,6 +3457,7 @@ export namespace Prisma {
     pol1?: StringFieldUpdateOperationsInput | string
     monitor2?: NullableStringFieldUpdateOperationsInput | string | null
     pol2?: NullableStringFieldUpdateOperationsInput | string | null
+    sector?: StringFieldUpdateOperationsInput | string
     responsible?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3450,6 +3472,7 @@ export namespace Prisma {
     pol1?: StringFieldUpdateOperationsInput | string
     monitor2?: NullableStringFieldUpdateOperationsInput | string | null
     pol2?: NullableStringFieldUpdateOperationsInput | string | null
+    sector?: StringFieldUpdateOperationsInput | string
     responsible?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3464,6 +3487,7 @@ export namespace Prisma {
     pol1: string
     monitor2?: string | null
     pol2?: string | null
+    sector: string
     responsible: string
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -3477,6 +3501,7 @@ export namespace Prisma {
     pol1?: StringFieldUpdateOperationsInput | string
     monitor2?: NullableStringFieldUpdateOperationsInput | string | null
     pol2?: NullableStringFieldUpdateOperationsInput | string | null
+    sector?: StringFieldUpdateOperationsInput | string
     responsible?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3491,6 +3516,7 @@ export namespace Prisma {
     pol1?: StringFieldUpdateOperationsInput | string
     monitor2?: NullableStringFieldUpdateOperationsInput | string | null
     pol2?: NullableStringFieldUpdateOperationsInput | string | null
+    sector?: StringFieldUpdateOperationsInput | string
     responsible?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3629,6 +3655,7 @@ export namespace Prisma {
     pol1?: SortOrder
     monitor2?: SortOrder
     pol2?: SortOrder
+    sector?: SortOrder
     responsible?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -3647,6 +3674,7 @@ export namespace Prisma {
     pol1?: SortOrder
     monitor2?: SortOrder
     pol2?: SortOrder
+    sector?: SortOrder
     responsible?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -3661,6 +3689,7 @@ export namespace Prisma {
     pol1?: SortOrder
     monitor2?: SortOrder
     pol2?: SortOrder
+    sector?: SortOrder
     responsible?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
