@@ -3305,19 +3305,19 @@ export namespace Prisma {
     id?: number
     computer?: string
     monitor1?: string
-    monitor2?: string
     AND?: StationWhereInput | StationWhereInput[]
     OR?: StationWhereInput[]
     NOT?: StationWhereInput | StationWhereInput[]
     processor?: StringFilter<"Station"> | string
     pol1?: StringFilter<"Station"> | string
+    monitor2?: StringNullableFilter<"Station"> | string | null
     pol2?: StringNullableFilter<"Station"> | string | null
     sector?: StringFilter<"Station"> | string
     responsible?: StringFilter<"Station"> | string
     createdAt?: DateTimeFilter<"Station"> | Date | string
     updatedAt?: DateTimeFilter<"Station"> | Date | string
     userCreated?: StringFilter<"Station"> | string
-  }, "id" | "computer" | "monitor1" | "monitor2">
+  }, "id" | "computer" | "monitor1">
 
   export type StationOrderByWithAggregationInput = {
     id?: SortOrder

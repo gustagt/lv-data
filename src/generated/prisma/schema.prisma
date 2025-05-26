@@ -20,7 +20,7 @@ model Station {
   processor   String
   monitor1    String   @unique
   pol1        String
-  monitor2    String?  @unique
+  monitor2    String?
   pol2        String?
   sector      String
   responsible String
