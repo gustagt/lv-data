@@ -29,7 +29,7 @@ class StationRepository {
       if (existingStation.monitor1 === data.monitor1) {
         throw new Error("Já existe um cadastro com esse monitor 1.");
       }
-      if (existingStation.monitor2 === data.monitor2) {
+      if (existingStation.monitor2 === data.monitor2 && data.monitor2) {
         throw new Error("Já existe um cadastro com esse monitor 2.");
       }
     }
